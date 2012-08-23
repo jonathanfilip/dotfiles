@@ -1,0 +1,80 @@
+ 
+# Act like xterm
+altscreen on
+
+# Change the escape key used for commands from CTRL-A
+escape ``
+ 
+# Time for message to be displayed
+msgwait 1
+ 
+# Don't monitor for output in windows
+defmonitor off
+
+# Don't display the startup message
+startup_message off
+
+#deflogin on
+
+# No visual bell
+vbell off
+
+# Use UTF-8
+defutf8 on
+
+# Max scrollback possible
+defscrollback 10000
+ 
+# Set the startup shell
+#shell -
+#shell -bash
+shell -
+
+#screen -t bash bash
+
+# terminfo and termcap for nice 256 color terminal
+# allow bold colors - necessary for some reason
+attrcolor b ".I" 
+
+# tell screen how to set colors. AB = background, AF=foreground 
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm' 
+#termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm:ti@:te@'
+#termcapinfo xterm* ti@:te@
+
+
+
+# Erase background with current bg color 
+defbce on
+
+# Automatically detach screen session
+autodetach on
+
+# Only show the caption when working with split windows
+caption splitonly
+
+# Always make the status the last line
+hardstatus alwayslastline
+#hardstatus string "%{= kd}%-Lw%20>%{= kG}[%{=b kd}%n %t%{= kG}]%{= kw}%+Lw %-=%{= kG} | %{= kd}${USER}@%H %{= kG}| %{= kd}[%l]"
+#hardstatus string "%{= dd}%-Lw%20>%{= dG}[%{=b dd}%n %t%{= dG}]%{= dw}%+Lw %-=%{= dG} | %{= dd}${USER}@%H %{= dG}| %{= dd}[%l]"
+#hardstatus string "%{= dd}%-Lw%20>%{= dG}%n %t%{= dd}%+Lw %-=%{= dG} | %{= dd}${USER}@%H %{= dG}| %{= dd}[%l]"
+#hardstatus string "%{= dd}%-Lw%20>%{= dg}%t%{= dd}%+Lw%-=%{= dg} | %{= dd}${USER}@%H %{= dg}| %{= dd}[%l]"
+#hardstatus string "%{= dd}%-Lw%20>%{= dg} %n %t %{= dd}%+Lw%-=%{= dg} | %{= dd}${USER}@%H %{= dg}| %{= dd}[%l]"
+#hardstatus alwayslastline "%{= dd}%-w%{= dd} %n %t %{-}%+w %-="
+hardstatus alwayslastline "%{= dd}%-w%{= dc} %n %t %{-}%{= dd}%+w %-=%{= dg} | %{= dd}${USER}@%H %{= dg}| %{= dd}[%l]"
+caption string "%{= dd}%{= dg}(%{=b dd}%n %t%{= dg})%{= dd}"
+
+# Enable control characters
+defc1 on
+
+bind a other
+
+#termcapinfo xterm* ti@:te@
+
+shelltitle "bash"
+
+#screen -t bash
+screen
+ 
+#select 0
+
+

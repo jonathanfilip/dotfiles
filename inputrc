@@ -1,0 +1,19 @@
+# Inputrc file
+
+set completion-ignore-case on
+set completion-query-items 100
+set page-completions off
+set show-all-if-ambiguous On
+
+set mark-directories on
+set mark-symlinked-directories on
+
+set bell-style none
+
+set horizontal-scroll-mode Off
+
+set visible-stats On
+
+set editing-mode vi
+set keymap vi
+

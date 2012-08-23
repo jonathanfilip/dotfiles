@@ -1,0 +1,107 @@
+#*basicLocale:   C
+#*displayLang:   C
+#*inputLang: C
+#*numeric:   C
+#*timeFormat:    C
+
+! XTerm
+##ifdef OPENWINDOWS
+#XTerm*VT100*font: *-lucida sans typewriter-bold-r-*-12-*
+##else
+#XTerm*VT100*font: -misc-fixed-medium-r-normal-*-13-120-75-75-c-70-iso8859-1
+#!*-lucidatypewriter-bold-r-*-12-*
+##endif
+#
+#XTerm*font:                 xft:Consolas:size=14
+#xterm*faceName:                 Menlo
+#xterm*faceSize:                 12
+#xterm*faceName:                 Menlo
+xterm*faceName:                 Consolas
+xterm*faceSize:                 14
+xterm*loginShell:               true
+xterm*background:               #202020
+xterm*foreground:               #e0e0e0
+xterm*highlightColor:           #364458
+xterm*cursorColor:              #8ac6f2
+xterm*cursorBlink:              true
+xterm*VT100.geometry:           128x32
+xterm*saveLines:                16000
+xterm*internalBorder:           2
+xterm*jumpScroll:               true
+xterm*scrollBar:                false
+xterm*rightScrollBar:           false
+xterm*utf8:                     true
+xterm*visualBell:               true
+xterm*visualBellDelay:          0
+xterm*scrollKey:                true
+xterm*scrollTtyOutput:          false
+xterm*colorMode:                on
+!xterm*charClass:                33:48,37:48,45-47:48,64:48
+xterm*charClass:                33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+
+#XTerm*charClass: 33:48,37:48,45-47:48,64:48
+
+#XTerm*eightBitInput: true
+#XTerm*eightBitOutput: true
+#XTerm*altSendsEscape: false
+#XTerm*metaSendsEscape: false
+
+#Xft.antialias: true
+#Xft.dpi: 75
+#Xft.autohint: true
+#Xft.hinting: true
+#Xft.hintstyle: hintfull
+#Xft.hintstyle: hintmedium
+# hintnone, hintslight, hintmedium, hintfull
+#Xft.lcdfilter: lcddefault
+#Xft.embolden: true
+#Xft.render: true
+# lcdnone, lcddefault, lcdlight, lcdlegacy
+#Xft.rgba: rgb
+
+#XTerm.VT100.translations: #override\n\
+#    <Key>F1:  set-vt-font(4) keymap(medium)\n\
+#    Shift<Key>Up: scroll-back(1,line)\n\
+#    <Btn4Down>: scroll-back(1,halfpage)\n\
+#    <Btn5Down>: scroll-forw(1,halfpage)\n\
+#    Shift<Key>Down: scroll-forw(1,line)\n\
+#    Shift<Key>R9: scroll-back(1,page)\n\
+#    Shift<Key>R15: scroll-forw(1,page)\n\
+#    <Btn1Up>: select-end(CLIPBOARD,PRIMARY)\n\
+#    <Key>F18: insert-selection(CLIPBOARD,PRIMARY)
+#
+#XTerm.VT100.unreadableKeymap.Translations:  #override\
+#    :<Key>F1:  set-vt-font(2) keymap(tiny)
+#XTerm.VT100.tinyKeymap.Translations:    #override\
+#    :<Key>F1:  set-vt-font(3) keymap(small)
+#XTerm.VT100.smallKeymap.Translations:   #override\
+#    :<Key>F1:  set-vt-font(4) keymap(medium)
+#XTerm.VT100.mediumKeymap.Translations:  #override\
+#    :<Key>F1:  set-vt-font(5) keymap(large)
+#XTerm.VT100.largeKeymap.Translations:   #override\
+#    :<Key>F1:  set-vt-font(6) keymap(huge)
+#XTerm.VT100.hugeKeymap.Translations:    #override\
+#    :<Key>F1:  set-vt-font(d) keymap(default)
+#XTerm.VT100.defaultKeymap.Translations: #override\
+#    :<Key>F1:  set-vt-font(1) keymap(unreadable)
+
+!URxvt*background:           #242424
+!URxvt*foreground:           #e4e4e4
+!URxvt*cursorColor:          #8ac6f2
+!URxvt*scrollstyle:          rxvt
+!URxvt*modifier:             alt
+!URxvt*depth:                32
+!URxvt*font:                 xft:Consolas:size=14
+!URxvt*scrollBar:            true
+!URxvt*externalBorder:       0
+!URxvt*internalBorder:       2
+!URxvt*mouseWheelScrollPage: true
+!URxvt*loginShell:           true
+!URxvt*termName:             rxvt-unicode
+!URxvt*saveLines:            16384
+!URxvt*scrollBar_right:      true
+!URxvt*borderless:           false
+!URxvt*transparent:          false
+!URxvt*color4:               RoyalBlue
+!URxvt*color12:              RoyalBlue
+!URxvt*geometry:             128x32
