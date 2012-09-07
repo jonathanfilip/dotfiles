@@ -1,3 +1,28 @@
+
+! ============================================================================
+! Dark Colors
+! ============================================================================
+
+*background:  #121212
+*foreground:  #d7d7d7
+*color0:      #d7d7d7
+*color8:      #d7d7d7
+*color1:      #ff5f5f
+*color9:      #ff5f5f
+*color2:      #afd787
+*color10:     #afd787
+*color3:      #d7d7af
+*color11:     #d7d7af
+*color4:      #87d7ff
+*color12:     #87d7ff
+*color5:      #d7afd7
+*color13:     #d7afd7
+*color6:      #87d7af
+*color14:     #87d7af
+*color7:      #121212
+*color15:     #121212
+
+
 #*basicLocale:   C
 #*displayLang:   C
 #*inputLang: C
@@ -16,29 +41,37 @@
 #xterm*faceName:                 Menlo
 #xterm*faceSize:                 12
 #xterm*faceName:                 Menlo
-xterm*faceName:                 Consolas
-xterm*faceSize:                 14
-xterm*loginShell:               true
-xterm*background:               #202020
-xterm*foreground:               #e0e0e0
-xterm*highlightColor:           #364458
-xterm*cursorColor:              #8ac6f2
-xterm*cursorBlink:              true
-xterm*VT100.geometry:           128x32
-xterm*saveLines:                16000
-xterm*internalBorder:           2
-xterm*jumpScroll:               true
-xterm*scrollBar:                false
-xterm*rightScrollBar:           false
-xterm*utf8:                     true
-xterm*visualBell:               true
-xterm*visualBellDelay:          0
-xterm*scrollKey:                true
-xterm*scrollTtyOutput:          false
-xterm*colorMode:                on
-!xterm*charClass:                33:48,37:48,45-47:48,64:48
-xterm*charClass:                33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 
+
+##############################################################
+
+
+!xterm*faceName:                 Consolas
+!xterm*faceSize:                 14
+!xterm*loginShell:               true
+!xterm*background:               #202020
+!xterm*foreground:               #e0e0e0
+!xterm*highlightColor:           #364458
+!xterm*cursorColor:              #8ac6f2
+!xterm*cursorBlink:              true
+!xterm*VT100.geometry:           128x32
+!xterm*saveLines:                16000
+!xterm*internalBorder:           2
+!xterm*jumpScroll:               true
+!xterm*scrollBar:                false
+!xterm*rightScrollBar:           false
+!xterm*utf8:                     true
+!xterm*visualBell:               true
+!xterm*visualBellDelay:          0
+!xterm*scrollKey:                true
+!xterm*scrollTtyOutput:          false
+!xterm*colorMode:                on
+!xterm*charClass:                33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+
+
+##############################################################
+
+!xterm*charClass:                33:48,37:48,45-47:48,64:48
 #XTerm*charClass: 33:48,37:48,45-47:48,64:48
 
 #XTerm*eightBitInput: true
