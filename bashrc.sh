@@ -159,11 +159,15 @@
 
     # Custom greps {{{
         function pygrep {
-            grep -r -n --include=*.py $@ *
+            grep -r -n --include=*.py "$@" *
         }
 
         function csgrep {
-            grep -r -n --include=*.cs $@ *
+            grep -r -n --include=*.cs "$@" *
+        }
+
+        function cgrep {
+            grep -r -n --include=*.{cpp,h,H,C} "$@" *
         }
     # }}}
 
