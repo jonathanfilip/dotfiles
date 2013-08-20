@@ -167,7 +167,15 @@
         }
 
         function cgrep {
-            grep -r -n --include=*.{cpp,h,H,C} "$@" *
+            grep -r -n --include=*.{cpp,h,H,hpp,C} "$@" *
+        }
+
+        function cppgrep {
+            grep -r -n --include=*.{cpp,C} "$@" *
+        }
+
+        function hgrep {
+            grep -r -n --include=*.{h,H,hpp} "$@" *
         }
     # }}}
 
@@ -239,6 +247,27 @@
             tmux attach -t "$1"
         }
         alias ta=tmux_attach
+    # }}}
+
+    # Shortcuts {{{
+        declare -A projects
+        projects["clear"]="unset SHELL_TAG"
+
+        function _proj() {
+            local cur=${COMP_WORDS[COMP_CWORD]}
+            local choices=${!projects[@]}
+            COMPREPLY=( $(compgen -W "${choices/clear/}" -- $cur) )
+        }
+
+        function proj() {
+            if [[ ${projects[$1]} ]]
+            then
+                eval ${projects[$1]}
+            else
+                echo "No project named '$1'."
+            fi
+        }
+        complete -F _proj proj
     # }}}
 
 # }}}
