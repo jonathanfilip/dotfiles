@@ -268,6 +268,100 @@
             fi
         }
         complete -F _proj proj
+
+        declare -A directories
+
+        function _chd() {
+            local cur=${COMP_WORDS[COMP_CWORD]}
+            local choices=${!directories[@]}
+            COMPREPLY=( $(compgen -W "${choices}" -- $cur) )
+        }
+
+        function chd() {
+            if [[ ${directories[$1]} ]]
+            then
+                eval ${directories[$1]}
+            else
+                echo "No directory shortcut named '$1'."
+            fi
+        }
+        complete -F _chd chd
+    # }}}
+
+    # Utility {{{
+        function add_dir_to_variable() {
+            varname=$1
+            eval argvar=\$$varname
+            #dir=${2%/}
+            dir=$2
+            if [[ -z "$argvar" ]]
+            then
+                eval export $varname=$dir
+                return
+            fi
+
+            if [[ ! -d "$dir" ]]
+            then
+                echo "add_dir_to_variable: directory '$dir' does not exist."
+                return
+            fi
+
+            if [[ ":$argvar:" != *":$dir:"* ]]
+            then
+                if [[ -n "$3" ]] && [[ "$3" == "1" ]]
+                then
+                    eval export $varname=$dir:\$$varname
+                else
+                    eval export $varname=\$$varname:$dir
+                fi
+            #else
+            #    echo "add_dir_to_variable: directory '$dir' already exists in '$varname' variable."
+            fi
+
+        }
+
+        function add_to_path() {
+            for var in $@
+            do
+                add_dir_to_variable "PATH" $var
+            done
+        }
+
+        function prepend_to_path() {
+            for var in $@
+            do
+                add_dir_to_variable "PATH" $var 1
+            done
+        }
+
+        function add_to_ld_library_path() {
+            for var in $@
+            do
+                add_dir_to_variable "LD_LIBRARY_PATH" $var
+            done
+        }
+
+        function prepend_to_ld_library_path() {
+            for var in $@
+            do
+                add_dir_to_variable "LD_LIBRARY_PATH" $var 1
+            done
+        }
+
+        function add_to_python_path() {
+            for var in $@
+            do
+                add_dir_to_variable "PYTHON_PATH" $var
+            done
+        }
+
+        function prepend_to_python_path() {
+            for var in $@
+            do
+                add_dir_to_variable "PYTHON_PATH" $var 1
+            done
+        }
+
     # }}}
 
 # }}}
