@@ -1,0 +1,15 @@
+--style=kr
+--align-pointer=name
+--align-reference=name
+--break-blocks
+--break-closing-brackets
+--indent-classes
+--indent-col1-comments
+--indent-labels
+--indent-namespaces
+--indent-switches
+--indent=tab
+--lineend=linux
+--pad-header
+--pad-oper
+--unpad-paren

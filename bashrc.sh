@@ -136,6 +136,10 @@
         #export TITLE="$@"
     }
 
+    function dir_diff {
+        vim -c "DirDiff $1 $2"
+    }
+
     # Display ls Colors {{{
         function lscolors {
             local header="no:global default;fi:normal file;di:directory;"
