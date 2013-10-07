@@ -3,13 +3,13 @@
 
 # ============================================================================
 # Setup {{{
-    platform=$(uname)
-    if [[ "$platform" == 'Linux' ]]; then
-        platform='linux'
-    elif [[ "$platform" == 'Darwin' ]]; then
-        platform='osx'
+    export PLATFORM=$(uname)
+    if [[ "$PLATFORM" == 'Linux' ]]; then
+        PLATFORM='linux'
+    elif [[ "$PLATFORM" == 'Darwin' ]]; then
+        PLATFORM='osx'
     else
-        platform='unknown'
+        PLATFORM='unknown'
     fi
 # }}}
 # ============================================================================
@@ -35,10 +35,10 @@
     export GREP_OPTIONS="--exclude=\*.svn\*"
     export HISTCONTROL=ignoreboth
     export LUCIUS_STYLE=light
-    if [[ "$platform" == "linux" ]]; then
+    if [[ "$PLATFORM" == "linux" ]]; then
         #export TERM="xterm-256color"
         export LOAD_CMD="cut -d ' ' -f 1-3 /proc/loadavg"
-    elif [[ "$platform" == "osx" ]]; then
+    elif [[ "$PLATFORM" == "osx" ]]; then
         export LOAD_CMD="uptime | cut -d ' ' -f 10-"
     fi
 # }}}
@@ -48,9 +48,9 @@
 # ============================================================================
 # Aliases {{{
     # ls Commands
-    if [[ $platform == 'linux' ]]; then
+    if [[ $PLATFORM == 'linux' ]]; then
         alias ls='ls --color=auto'
-    elif [[ $platform == 'osx' ]]; then
+    elif [[ $PLATFORM == 'osx' ]]; then
         alias ls='ls -G'
     fi
     alias lt='ls -ltr'
