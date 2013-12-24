@@ -171,11 +171,11 @@
         }
 
         function cgrep {
-            grep -r -n --include=*.{cpp,h,H,hpp,C} "$@" *
+            grep -r -n --include=*.{cpp,h,H,hpp,c,C} "$@" *
         }
 
         function cppgrep {
-            grep -r -n --include=*.{cpp,C} "$@" *
+            grep -r -n --include=*.{cpp,c,C} "$@" *
         }
 
         function hgrep {
