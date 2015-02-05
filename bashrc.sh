@@ -167,7 +167,7 @@
         }
 
         function csgrep {
-            grep -r -n --include=*.cs "$@" *
+            grep -r -n --include=*.{cs,xaml} "$@" *
         }
 
         function cgrep {
