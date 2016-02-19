@@ -220,6 +220,10 @@
         function svn_modified {
             svn status $@ | egrep -v "^\?"
         }
+
+        function vim_svn_modified {
+            vim $(svn status $@ | egrep -v "^\?" | tr -s " " | cut -d " " -f 2)
+        }
     # }}}
 
     # TMUX {{{
