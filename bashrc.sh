@@ -20,7 +20,7 @@
     shopt -s cdspell # Correct minor cd spelling errors
     shopt -s dotglob # Allow dot files to be returned in path expansion
     shopt -s checkwinsize # Check size after each command
-    #set -o vi # Make the prompt like vi
+    set -o vi # Make the prompt like vi
     stty ixoff -ixon # Don't let CTRL S/Q work
 # }}}
 # ============================================================================
@@ -73,6 +73,8 @@
 
     alias ipy='ipython -colors Linux'
     alias grep='grep --color=auto'
+    alias ack='ack --color --color-match=red --color-filename=green --color-lineno=blue'
+    alias ag='ag --color --color-match=31 --color-path=32 --color-line-number=34'
 # }}}
 # ============================================================================
 
