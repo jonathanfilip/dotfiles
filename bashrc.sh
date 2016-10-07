@@ -185,6 +185,20 @@
         }
     # }}}
 
+    # Custom ags {{{
+        function pyag {
+            ag --python "$@"
+        }
+
+        function csag {
+            ag --cssharp "$@"
+        }
+
+        function cppag {
+            ag --cpp "$@"
+        }
+    # }}}
+
 
     # Vim colorshemes {{{
         function lucius_dark {
@@ -380,8 +394,8 @@
 
 # ============================================================================
 # Local Settings {{{
-if [ -f ~/.bashrc_local ]; then
-    source ~/.bashrc_local
+if [ -f ~/.bashrc.local ]; then
+    source ~/.bashrc.local
 fi
 # }}}
 # ============================================================================
