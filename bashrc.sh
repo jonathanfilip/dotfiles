@@ -19,7 +19,11 @@ shopt -s cdspell # Correct minor cd spelling errors
 shopt -s dotglob # Allow dot files to be returned in path expansion
 shopt -s checkwinsize # Check size after each command
 set -o vi # Make the prompt like vi
-stty ixoff -ixon # Don't let CTRL S/Q work
+
+if [[ $- == *i* ]]
+then
+    stty ixoff -ixon # Don't let CTRL S/Q work
+fi
 
 
 # Environment: {{{1 ==========================================================
@@ -292,6 +296,10 @@ function prepend_to_python_path() {
     do
         add_dir_to_variable "PYTHON_PATH" $var 1
     done
+}
+
+function vimdocx() {
+    pandoc -f docx -t markdown $1 | vim -
 }
 
 
