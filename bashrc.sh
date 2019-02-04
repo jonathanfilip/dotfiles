@@ -41,6 +41,10 @@ elif [[ "$PLATFORM" == "osx" ]]; then
     export LOAD_CMD="uptime | cut -d ' ' -f 10-"
 fi
 
+if [[ $PLATFORM == 'osx' ]]; then
+    export HOMEBREW_NO_ANALYTICS=1
+fi
+
 
 # Aliases: {{{1 ==============================================================
 
