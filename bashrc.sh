@@ -242,12 +242,6 @@ function add_dir_to_variable() {
         return
     fi
 
-    if [[ ! -d "$dir" ]]
-    then
-        echo "add_dir_to_variable: directory '$dir' does not exist."
-        return
-    fi
-
     if [[ ":$argvar:" != *":$dir:"* ]]
     then
         if [[ -n "$3" ]] && [[ "$3" == "1" ]]

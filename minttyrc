@@ -34,3 +34,4 @@ Charset=UTF-8
 RightClickAction=paste
 ClicksTargetApp=yes
 ScrollMod=shift
+ScrollbackLines=1000
