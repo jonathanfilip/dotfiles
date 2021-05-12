@@ -3,13 +3,15 @@
 
 # Setup: {{{1 ================================================================
 
-export PLATFORM=$(uname)
-if [[ "$PLATFORM" == 'Linux' ]]; then
-    PLATFORM='linux'
-elif [[ "$PLATFORM" == 'Darwin' ]]; then
-    PLATFORM='osx'
+export TERM_PLATFORM=$(uname)
+if [[ "$TERM_PLATFORM" == 'Linux' ]]; then
+    TERM_PLATFORM='linux'
+elif [[ "$TERM_PLATFORM" == 'Darwin' ]]; then
+    TERM_PLATFORM='osx'
+elif [[ "$TERM_PLATFORM" == 'MINGW64*' ]]; then
+    TERM_PLATFORM='cygwin'
 else
-    PLATFORM='unknown'
+    TERM_PLATFORM='unknown'
 fi
 
 
@@ -34,14 +36,14 @@ export IGNOREEOF=1 # press ctrl+D twice to exit
 export PROMPT_COMMAND=bash_prompt # Set up the command line
 export GREP_OPTIONS="--exclude=\*.svn\*"
 export HISTCONTROL=ignoreboth
-if [[ "$PLATFORM" == "linux" ]]; then
+if [[ "$TERM_PLATFORM" == "linux" ]]; then
     #export TERM="xterm-256color"
     export LOAD_CMD="cut -d ' ' -f 1-3 /proc/loadavg"
-elif [[ "$PLATFORM" == "osx" ]]; then
+elif [[ "$TERM_PLATFORM" == "osx" ]]; then
     export LOAD_CMD="uptime | cut -d ' ' -f 10-"
 fi
 
-if [[ $PLATFORM == 'osx' ]]; then
+if [[ $TERM_PLATFORM == 'osx' ]]; then
     export HOMEBREW_NO_ANALYTICS=1
 fi
 
@@ -49,9 +51,9 @@ fi
 # Aliases: {{{1 ==============================================================
 
 # ls Commands
-if [[ $PLATFORM == 'linux' ]]; then
+if [[ $TERM_PLATFORM == 'linux' ]]; then
     alias ls='ls --color=auto'
-elif [[ $PLATFORM == 'osx' ]]; then
+elif [[ $TERM_PLATFORM == 'osx' ]]; then
     alias ls='ls -G'
 fi
 alias lt='ls -ltr'
@@ -136,30 +138,6 @@ function lscolors {
             "${!x}" || echo "$x" )\e[m"
     done
     }
-}
-
-function pygrep {
-    grep -r -n --include=*.py "$@" *
-}
-
-function csgrep {
-    grep -r -n --include=*.{cs,xaml} "$@" *
-}
-
-function cgrep {
-    grep -r -n --include=*.{cpp,h,H,hpp,c,C} "$@" *
-}
-
-function pyag {
-    ag --python "$@"
-}
-
-function csag {
-    ag --cssharp "$@"
-}
-
-function cppag {
-    ag --cpp "$@"
 }
 
 function print_colors() {
